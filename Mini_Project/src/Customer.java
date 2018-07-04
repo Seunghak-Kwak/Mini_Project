@@ -1,10 +1,10 @@
 public class Customer {
 	private String name;
-	private char gender;
+	private String gender;
 	private String email;
-	private int birthYear;
+	private String birthYear;
 	
-	public Customer(String name, char gender, String email, int birthYear) {
+	public Customer(String name, String gender, String email, String birthYear) {
 		super();
 		this.name = name;
 		this.gender = gender;
@@ -18,10 +18,10 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getEmail() {
@@ -30,10 +30,10 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getBirthYear() {
+	public String getBirthYear() {
 		return birthYear;
 	}
-	public void setBirthYear(int birthYear) {
+	public void setBirthYear(String birthYear) {
 		this.birthYear = birthYear;
 	}
 	
