@@ -1,4 +1,8 @@
-/*import java.util.ArrayList;
+package com.javaya.dao;
+
+import com.javaya.model.*;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VIPenroll {
@@ -46,4 +50,3 @@ public class VIPenroll {
 	}
 
 }
-*/

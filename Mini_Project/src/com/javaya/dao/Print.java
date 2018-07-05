@@ -1,4 +1,7 @@
-/*import java.util.ArrayList;
+package com.javaya.dao;
+import com.javaya.model.Customer;
+
+import java.util.ArrayList;
 
 public class Print {
 	private ArrayList<Customer> custList;
@@ -8,6 +11,7 @@ public class Print {
 		this.custList = custList;
 		this.indexORcount = indexORcount;	
 	}
+	
 	
 	public void printCustomerData() {
 	      Customer cust = custList.get(indexORcount);
@@ -29,4 +33,3 @@ public class Print {
 	   }
 		      	
 }
-*/

@@ -1,4 +1,8 @@
-/*import java.util.ArrayList;
+package com.javaya.dao;
+
+import com.javaya.model.Customer;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Update {
 	static Scanner scan = new Scanner(System.in);
@@ -40,4 +44,3 @@ public class Update {
 	   return result; 
    }
 }
-*/

@@ -1,4 +1,7 @@
-/*import java.util.Scanner;
+package com.javaya.dao;
+
+import java.util.Scanner;
+import com.javaya.model.Customer;
 
 public class Insert {
 	static Scanner scan = new Scanner(System.in);
@@ -74,4 +77,3 @@ public class Insert {
 	   }
 
 }
-*/
