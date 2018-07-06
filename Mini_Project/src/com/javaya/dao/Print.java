@@ -4,16 +4,8 @@ import com.javaya.model.Customer;
 import java.util.ArrayList;
 
 public class Print {
-	private ArrayList<Customer> custList;
-	private int indexORcount;
-	
-	public Print(ArrayList<Customer> custList, int indexORcount) {
-		this.custList = custList;
-		this.indexORcount = indexORcount;	
-	}
-	
-	
-	public void printCustomerData() {
+
+	public void printCustomerData(ArrayList<Customer> custList, int indexORcount) {
 	      Customer cust = custList.get(indexORcount);
 	      System.out.println("==========CUSTOMER INFO================");
 	      System.out.println("이름 : " + cust.getName());
@@ -23,11 +15,11 @@ public class Print {
 	      System.out.println("=======================================");
 	   }
 	
-   public void printAllCustomer() {
+   public void printAllCustomer(ArrayList<Customer> custList, int indexORcount) {
 	      int i = 0;
 	      while(i != indexORcount) {
-	    	 Print printCustomer = new Print(custList,i);
-	         printCustomer.printCustomerData();
+	    	 Print printCustomer = new Print();
+	         printCustomer.printCustomerData(custList, i);
 	         i++;
 	      }
 	   }

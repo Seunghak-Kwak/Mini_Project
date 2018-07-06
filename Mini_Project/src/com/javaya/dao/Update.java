@@ -6,17 +6,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Update {
 	static Scanner scan = new Scanner(System.in);
-	
-	private ArrayList<Customer> custList;
-	private int index;
+
 	private String data;
-	
-	public Update(ArrayList<Customer> custList, int index) {
-		this.custList = custList;
-		this.index = index;
-	}
-	
-   public void updateCustomerData() {
+
+   public void updateCustomerData(ArrayList<Customer> custList, int index) {
       Customer cust = custList.get(index);
       System.out.println("---------UPDATE CUSTOMER INFO----------");
       System.out.println("nothing change : just press Enter!!!!!!");

@@ -10,6 +10,7 @@ public class CustomerService implements ICustomerService {
 	   
 	static Scanner scan = new Scanner(System.in);
 	   public String run(String name) {
+		  System.out.println("CustomerService - run!");
 		  
 		  ArrayList<Customer> custList = new ArrayList<>();
 		  ArrayList<CustomerVIP> vipcustList = new ArrayList<>();
@@ -17,6 +18,10 @@ public class CustomerService implements ICustomerService {
 		  int count = 0;
 		  
 		  Insert insertCustomer = new Insert();
+		  Delete deleteCustomer = new Delete();
+		  Print printCustomer = new Print();
+		  Update updateCustomer = new Update();
+		  VIPenroll viplist = new VIPenroll();
 		  
 	      while(true) { // while 계속 돌아가도록
 	         count = custList.size();
@@ -40,8 +45,7 @@ public class CustomerService implements ICustomerService {
 	               System.out.println("이전 데이터가 존재하지 않습니다.");
 	            }else {
 	               index--;
-	               Print printCustomer = new Print(custList,index);
-	               printCustomer.printCustomerData();
+	               printCustomer.printCustomerData(custList,index);
 	            }
 	            break;
 	         case 'n' :
@@ -50,15 +54,13 @@ public class CustomerService implements ICustomerService {
 	               System.out.println("다음 데이터가 존재하지 않습니다.");
 	            }else {
 	               index++;
-	               Print printCustomer = new Print(custList,index);
-	               printCustomer.printCustomerData();
+	               printCustomer.printCustomerData(custList,index);
 	            }
 	            break;
 	         case 'c' :
 	            System.out.println("현재 데이터를 출력합니다.");
 	            if( (index >= 0) && (index < count)) {
-	            	Print printCustomer = new Print(custList,index);
-	            	printCustomer.printCustomerData();
+	            	printCustomer.printCustomerData(custList,index);
 	            }else {
 	               System.out.println("출력할 데이터가 선택되지 않았습니다.");
 	            }
@@ -67,8 +69,7 @@ public class CustomerService implements ICustomerService {
 	            System.out.println("데이터를 수정합니다.");
 	            if( (index >= 0) && (index < count)) {
 	               System.out.println(index + "번째 데이터를 수정합니다.");
-	               Update updateCustomer = new Update(custList,index);
-	               updateCustomer.updateCustomerData();
+	               updateCustomer.updateCustomerData(custList,index);
 	            }else {
 	               System.out.println("수정할 데이터가 선택되지 않았습니다.");
 	            }
@@ -77,8 +78,7 @@ public class CustomerService implements ICustomerService {
 	        	System.out.println("VIP 등록 절차");
 	        	if( (index >= 0) && (index < count)) {
 	                System.out.println(index + "번째 데이터를 VIP등록합니다.");
-	                VIPenroll vipCustomer = new VIPenroll(custList,index);
-	                vipcustList.add(vipCustomer.register());
+	                vipcustList.add(viplist.register(custList,index));
 	                System.out.println("VIP 등록 완료");
 	        	}else {
 	                System.out.println("VIP등록할 데이터가 선택되지 않았습니다.");
@@ -86,23 +86,21 @@ public class CustomerService implements ICustomerService {
 	             break;
 	         case 'v' :
 	        	 System.out.println("VIP 리스트를 출력합니다");
-	        	 VIPenroll viplist = new VIPenroll(vipcustList);
-	        	 viplist.printVIPlist();
+	        	 viplist.printVIPlist(vipcustList);
 	        	 break;
 	         case 'd' :
 	            System.out.println("데이터를 삭제합니다.");
 	            if( (index >= 0) && (index < count)) {
 	               System.out.println(index + "번째 데이터를 삭제합니다.");
-	               Delete deleteCustomer = new Delete(custList,index);
-	               custList = deleteCustomer.deleteCustomerData();
+	               
+	               custList = deleteCustomer.deleteCustomerData(custList,index);
 	            }else {
 	               System.out.println("삭제할 데이터가 선택되지 않았습니다.");
 	            }
 	            break;
 	         case 'a':
 	             System.out.println("정보 전체를 출력합니다.");
-	             Print printCustomer = new Print(custList,count);
-	             printCustomer.printAllCustomer();
+	             printCustomer.printAllCustomer(custList,count);
 	             break;
 	         case 'q' :
 	            System.out.println("프로그램을 종료합니다.");

@@ -7,21 +7,9 @@ import java.util.Scanner;
 
 public class VIPenroll {
 	static Scanner scan = new Scanner(System.in);
-	private ArrayList<CustomerVIP> vipcustList;
-	private ArrayList<Customer> custList;
-	private int countORindex;
 	
-	public VIPenroll(ArrayList<Customer> custList, int countORindex) {
-		this.custList = custList;
-		this.countORindex = countORindex;
-	}
-	public VIPenroll(ArrayList<CustomerVIP> vipcustList) {
-		this.vipcustList = vipcustList;
-		this.countORindex = vipcustList.size();
-	}
-	
-	public CustomerVIP register() {
-		Customer cust = custList.get(countORindex); //index
+	public CustomerVIP register(ArrayList<Customer> custList, int index) {
+		Customer cust = custList.get(index); //index
 		System.out.println(cust.getName() + " 님의 ");
 		System.out.print("직업 : ");
 	    String job = scan.next();
@@ -34,8 +22,8 @@ public class VIPenroll {
 	    return IamVIP;
 	}
 	
-	public void printVIPlist() {
-		for (int i = 0; i < countORindex; i++) { //count
+	public void printVIPlist(ArrayList<CustomerVIP> vipcustList) {
+		for (int i = 0; i < vipcustList.size(); i++) { //count
 		  CustomerVIP vipcust = vipcustList.get(i);
 	      System.out.println("======VIP CUSTOMER INFO================");
 	      System.out.println("이름 : " + vipcust.getName());

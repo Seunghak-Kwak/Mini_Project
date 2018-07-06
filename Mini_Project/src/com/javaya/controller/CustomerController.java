@@ -6,6 +6,7 @@ public class CustomerController {
 	ICustomerService custService;
 	
 	public void setCustomerService(ICustomerService custService) {
+		System.out.println("Customer controller - setCustomerSerive");
 		this.custService = custService;
 	}
 	
